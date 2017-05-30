@@ -53,7 +53,7 @@ waterfall.prototype.addBox = function () {
     oBox.className = 'box';
     var oImg = document.createElement('img');
     oImg.src = 'image/img%20(' + self.imageCount + ').jpg';
-    oImg.title = self.imageCount;
+    oImg.title = '点击图片查看大图';
     oImg.onload = function () {
         oImg.style = 'opacity:1';
     };
