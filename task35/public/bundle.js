@@ -208,6 +208,7 @@ function getCommand(msg,i){
     if(command==null){
         console.log('指令有误，请确认后重新操作');
         clearInterval(timer);
+        setColor('error',i);
         return false;
     }else{
         return command;
@@ -244,6 +245,7 @@ function getData(){
         setRowList(arr.length);
          return arr;
 }
+//type:select,error
 function setColor(type,num){
     var arr=rowList.childNodes;
     for(var i=0;i<arr.length;i++){
@@ -283,14 +285,14 @@ function setColor(type,num){
 
     CreateCar.constructor = CreateCar;
     CreateCar.prototype.getDirevtion = function () {
-        var deg = this.deg ;
+        var deg = this.deg % 360;
         if (deg === 0) {
             this.direction = 'TOP'
         } else if (deg === 90) {
             self.direction = 'RIG';
         } else if (deg === 180) {
             self.direction = 'BAC';
-        } else if (deg === -90) {
+        } else if (deg === 270) {
             self.direction = 'LEF'
         }
         return this.direction;
